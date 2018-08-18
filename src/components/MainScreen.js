@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
 	inputBox: {
 		height: 35,
 		width: 200,
-		borderColor: 'gray',
+		backgroundColor: 'white',
+		borderColor: 'black',
 		borderWidth: 1,
 		margin: 10,
 		padding: 3,
