@@ -1,6 +1,60 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
+
+class LoginScreen extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			username: 'Username',
+			password: 'Password',
+		}
+	}
+
+	static propTypes = {
+		navigation: PropTypes.object.isRequired,
+	}
+
+	static navigationOptions = {
+		title: 'Log In',
+	}
+
+	render() {
+		return (
+			<View style={styles.container}>
+		    <Text style={styles.welcome}>
+		      Go-Teach
+		    </Text>
+		    <TextInput 
+		    	underlineColorAndroid='transparent'
+		    	style={styles.inputBox}
+		    	onChangeText={text => this.setState({username: text})}
+		    	placeholder="Username"
+		    />
+		    <TextInput 
+		    	underlineColorAndroid='transparent'
+		    	secureTextEntry={true}
+		    	style={styles.inputBox}
+		    	onChangeText={text => this.setState({password: text})}
+		    	placeholder="Password"
+		    />
+		    <View style={{flexDirection: 'row', }}>
+			    <Button
+			      onPress={() => navigation.dispatch({ type: 'Login' })}
+			      title="Log in"
+			    />
+			    <Text> or </Text>
+			    <Text 
+			    	style={{color: 'blue'}}
+					  onPress={() => console.log('sign up')}
+					 >
+					  Sign Up
+					</Text>
+		    </View>
+		  </View>
+		)
+	}
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -14,29 +68,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
+  inputBox: {
+  	height: 35,
+  	width: 200,
+  	borderColor: 'gray',
+  	borderWidth: 1,
+  	margin: 10,
+  	padding: 3,
+  },
 });
-
-const LoginScreen = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Screen A
-    </Text>
-    <Text style={styles.instructions}>
-      This is great
-    </Text>
-    <Button
-      onPress={() => navigation.dispatch({ type: 'Login' })}
-      title="Log in"
-    />
-  </View>
-);
-
-LoginScreen.propTypes = {
-  navigation: PropTypes.object.isRequired,
-};
-
-LoginScreen.navigationOptions = {
-  title: 'Log In',
-};
 
 export default LoginScreen;
