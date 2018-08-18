@@ -8,15 +8,11 @@ import { AppNavigator, middleware } from './src/navigators/AppNavigator';
 
 const store = createStore(AppReducer, applyMiddleware(middleware));
 
-class ReduxExampleApp extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <AppNavigator />
-      </Provider>
-    );
-  }
-}
+const ReduxExampleApp = () => (
+	<Provider store={store}>
+		<AppNavigator />
+	</Provider>
+);
 
 AppRegistry.registerComponent('ReduxExample', () => ReduxExampleApp);
 

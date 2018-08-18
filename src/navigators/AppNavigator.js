@@ -1,5 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStackNavigator } from 'react-navigation';
 import {
@@ -13,7 +11,7 @@ import RegisterScreen from '../components/RegisterScreen';
 
 const middleware = createReactNavigationReduxMiddleware(
 	'root',
-	state => state.nav
+	state => state.nav,
 );
 
 const RootNavigator = createStackNavigator({

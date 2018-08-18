@@ -1,14 +1,14 @@
 const initialAuthState = { isLoggedIn: false };
 
 const auth = (state = initialAuthState, action) => {
-  switch (action.type) {
-    case 'Login':
-      return { ...state, isLoggedIn: true };
-    case 'Logout':
-      return { ...state, isLoggedIn: false };
-    default:
-      return state;
-  }
-}
+	switch (action.type) {
+	case 'Login':
+		return { ...state, isLoggedIn: true };
+	case 'Logout':
+		return { ...state, isLoggedIn: false };
+	default:
+		return state;
+	}
+};
 
 export default auth;

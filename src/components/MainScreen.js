@@ -53,37 +53,30 @@ class MainScreen extends Component {
 
 		return (
 			<View style={styles.container}>
-				<Text style={styles.welcome}>
-					Go-Teach
-		    </Text>
-		    <TextInput 
-		    	underlineColorAndroid='transparent'
-		    	style={styles.inputBox}
-		    	onChangeText={text => this.setState({username: text})}
-		    	placeholder="Username"
-		    />
-		    <TextInput 
-		    	underlineColorAndroid='transparent'
-		    	secureTextEntry={true}
-		    	style={styles.inputBox}
-		    	onChangeText={text => this.setState({password: text})}
-		    	placeholder="Password"
-		    />
-		    <View style={{flexDirection: 'row', }}>
-			    <Button
-			      onPress={() => console.log('login')}
-			      title="Log in"
-			    />
-			    <Text> or </Text>
-			    <Text 
-			    	style={{color: 'blue'}}
-					  onPress={navToRegister}
-					 >
-					  Sign Up
-					</Text>
-		    </View>
-		  </View>
-		)
+				<Text style={styles.welcome}>Go-Teach </Text>
+				<TextInput
+					underlineColorAndroid="transparent"
+					style={styles.inputBox}
+					onChangeText={text => this.setState({ username: text })}
+					placeholder="Username"
+				/>
+				<TextInput
+					underlineColorAndroid="transparent"
+					secureTextEntry
+					style={styles.inputBox}
+					onChangeText={text => this.setState({ password: text })}
+					placeholder="Password"
+				/>
+				<View style={{ flexDirection: 'row' }}>
+					<Button
+						onPress={() => console.log('login')}
+						title="Log in"
+					/>
+					<Text> or </Text>
+					<Text style={{ color: 'blue' }} onPress={navToRegister}> Sign Up </Text>
+				</View>
+			</View>
+		);
 	}
 }
 
