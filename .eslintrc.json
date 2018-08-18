@@ -1,0 +1,12 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+    	"jest": true,
+    	"es6": true
+    },
+    "rules": {
+      "indent": [2, "tab", { "SwitchCase": 1, "VariableDeclarator": 1 }],
+      "no-tabs": 0,
+      "react/prop-types": 0
+    }
+}
