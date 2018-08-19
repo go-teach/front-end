@@ -39,4 +39,5 @@ const mapStateToProps = state => ({
 	isLoggedIn: state.auth.isLoggedIn,
 });
 
+export { ProfileScreen }; //for testing
 export default connect(mapStateToProps)(ProfileScreen);
