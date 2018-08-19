@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterScreen component should return proper component 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 20,
+        "margin": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    Select Role: 
+  </Text>
+  <Picker
+    mode="dialog"
+    onValueChange={[Function]}
+    selectedValue="student"
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "height": 35,
+        "margin": 10,
+        "width": 200,
+      }
+    }
+  >
+    <PickerItem
+      label="Student"
+      value="student"
+    />
+    <PickerItem
+      label="Teacher"
+      value="teacher"
+    />
+  </Picker>
+  <Button
+    onPress={[Function]}
+    style={
+      Object {
+        "margin": 10,
+      }
+    }
+    title="Next"
+  />
+</Component>
+`;

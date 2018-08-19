@@ -219,4 +219,5 @@ const mapDispatchToProps = dispatch => ({
 	loggingIn: () => dispatch(loggingIn()),
 });
 
+export { RegisterScreen }; //for testing
 export default connect(undefined, mapDispatchToProps)(RegisterScreen);

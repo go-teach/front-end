@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainScreen component should return proper component 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 20,
+        "margin": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    Go-Teach 
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Username"
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "height": 35,
+        "margin": 10,
+        "padding": 3,
+        "width": 200,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Password"
+    secureTextEntry={true}
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "height": 35,
+        "margin": 10,
+        "padding": 3,
+        "width": 200,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <Component
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Button
+      onPress={[Function]}
+      title="Log in"
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+       or 
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      onPress={[MockFunction]}
+      style={
+        Object {
+          "color": "blue",
+        }
+      }
+    >
+       Sign Up 
+    </Text>
+  </Component>
+</Component>
+`;

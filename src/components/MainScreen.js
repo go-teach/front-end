@@ -97,4 +97,5 @@ const mapDispatchToProps = dispatch => ({
 	loggingIn: () => dispatch(loggingIn()),
 });
 
+export { MainScreen }; //for testing
 export default connect(undefined, mapDispatchToProps)(MainScreen);
