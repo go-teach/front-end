@@ -9,6 +9,7 @@ import {
 	TextInput,
 } from 'react-native';
 import { NavigationActions } from 'react-navigation';
+import { loggingIn } from '../actions/Auth';
 
 const styles = StyleSheet.create({
 	container: {
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
 class MainScreen extends Component {
 	static propTypes = {
 		navToRegister: PropTypes.func.isRequired,
+		navToProfile: PropTypes.func.isRequired,
 	}
 
 	static navigationOptions = {
@@ -47,10 +49,18 @@ class MainScreen extends Component {
 			username: '',
 			password: '',
 		};
+
+		this.handleLogIn = this.handleLogIn.bind(this);
+	}
+
+	handleLogIn() {
+		const { navToProfile, loggingIn } = this.props;
+		loggingIn();
+		navToProfile();
 	}
 
 	render() {
-		const { navToRegister } = this.props;
+		const { navToRegister, navToProfile } = this.props;
 
 		return (
 			<View style={styles.container}>
@@ -70,7 +80,7 @@ class MainScreen extends Component {
 				/>
 				<View style={{ flexDirection: 'row' }}>
 					<Button
-						onPress={() => console.log('login')}
+						onPress={this.handleLogIn}
 						title="Log in"
 					/>
 					<Text> or </Text>
@@ -83,6 +93,8 @@ class MainScreen extends Component {
 
 const mapDispatchToProps = dispatch => ({
 	navToRegister: () => dispatch(NavigationActions.navigate({ routeName: 'Register' })),
+	navToProfile: () => dispatch(NavigationActions.navigate({ routeName: 'Profile' })),
+	loggingIn: () => dispatch(loggingIn()),
 });
 
 export default connect(undefined, mapDispatchToProps)(MainScreen);

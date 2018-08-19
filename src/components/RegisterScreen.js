@@ -9,8 +9,10 @@ import {
 	TouchableHighlight,
 	TextInput,
 	KeyboardAvoidingView,
-	ScrollView,
 } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+import { connect } from 'react-redux';
+import { loggingIn } from '../actions/Auth';
 
 const styles = StyleSheet.create({
 	container: {
@@ -51,6 +53,11 @@ const styles = StyleSheet.create({
 });
 
 class RegisterScreen extends Component {
+	static propTypes = {
+		navToProfile: PropTypes.func.isRequired,
+		loggingIn: PropTypes.func.isRequired,
+	}
+
 	static navigationOptions = {
 		title: 'Register',
 	}
@@ -70,13 +77,15 @@ class RegisterScreen extends Component {
 			subject: 'matematika',
 			description: '',
 		};
+
+		this.handleRegister = this.handleRegister.bind(this);
 	}
 
-	// renderForTeacher() {
-	// 	return (
-
-	// 	)
-	// }
+	handleRegister() {
+		const { navToProfile, loggingIn } = this.props;
+		loggingIn();
+		navToProfile();
+	}
 
 	renderForStudent(schoolLevel) {
 		return (
@@ -110,7 +119,7 @@ class RegisterScreen extends Component {
 					<Picker.Item label="Inggris" value="inggris" />
 				</Picker>
 				<TextInput
-					style={{ borderWidth: 1, borderColor: 'black', backgroundColor: 'white', padding: 10 }}
+					style={{ borderWidth: 1, borderColor: 'black', backgroundColor: 'white', padding: 10, margin: 10 }}
 					editable
 					multiline
 					placeholder="About me"
@@ -192,7 +201,7 @@ class RegisterScreen extends Component {
 						</View>
 					</TouchableHighlight>
 					<TouchableHighlight
-						onPress={() => console.log('back')}
+						onPress={this.handleRegister}
 						style={{ marginLeft: 10, backgroundColor: '#4996ff', padding: 7 }}
 					>
 						<View style={styles.touchableContainer}>
@@ -205,4 +214,9 @@ class RegisterScreen extends Component {
 	}
 }
 
-export default RegisterScreen;
+const mapDispatchToProps = dispatch => ({
+	navToProfile: () => dispatch(NavigationActions.navigate({ routeName: 'Profile' })),
+	loggingIn: () => dispatch(loggingIn()),
+});
+
+export default connect(undefined, mapDispatchToProps)(RegisterScreen);
